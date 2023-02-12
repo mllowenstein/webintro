@@ -1,0 +1,38 @@
+<!--
+Snake game that uses JavaScript to render on the browser's HTML5 canvas.
+-->
+<html>
+<head>
+<title>Retro Snake Clone</title>
+<style>
+  body {
+    background-color: #999999;
+    height: 100%; overflow: hidden;
+  }
+  #canvasWrapper {
+   text-align: center;
+   font-family: "Arial";
+   overflow : hidden;
+   font-size:10pt;
+  }
+</style>
+</head>
+<body>
+  <div id="canvasWrapper">
+    <p><strong>HTML5 Canvas Snake</strong></p>
+    <p>Arrow Keys to Move, Press 'R' to Reset</p>
+    <canvas id="mainCanvas"></canvas>
+    <p>
+  </div>
+  <script type="text/javascript" src="snake.js"></script>
+  <script>
+    const MAP_WIDTH = 45;
+    const MAP_HEIGHT = 30;
+    const TILE_SIZE = 12;
+    let mainCanvas = document.getElementById("mainCanvas");
+    let game = new SnakeGame(mainCanvas, MAP_WIDTH, MAP_HEIGHT, TILE_SIZE);
+    game.growthRate = 5;
+    game.gameTick();
+  </script>
+</body>
+</html>
